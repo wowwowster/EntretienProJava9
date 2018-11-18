@@ -1,30 +1,29 @@
 package main.java.tests;
 
 
-
 public class upperCaseFirstLetterSansSolution {
 
-   public static void main(String[] args) {
-      String texte = "dans xsd , on peut rendre un attribut obligatoire avec a";
-      // on s'occupe de la premi�re lettre
+    public static void main(String[] args) {
+        String texte = "dans xsd , on peut rendre un attribut obligatoire avec a";
+        // on s'occupe de la premi�re lettre
 
-      System.out.println(upperCaseFirstLetter(texte));
+        System.out.println(upperCaseFirstLetter(texte));
 
 
-   }
+    }
 
-   static String upperCaseFirstLetter (String chaine) {
+    static String upperCaseFirstLetter(String chaine) {
+        int longueur = chaine.length();
+        char[] tabChar = chaine.toCharArray();
 
-      Character character = chaine.charAt(0);
-
-      StringBuffer sb = new StringBuffer(chaine.length());
-      sb.append(Character.toUpperCase(character));
-      for (int i = 1 ; i < chaine.length() ; i++) {
-
-        if  (chaine.charAt(i-1) == ' ') {
-           sb.append(Character.toUpperCase(chaine.charAt(i)));
-        } else  sb.append(chaine.charAt(i));
-      }
-      return sb.toString() ;
-   }
+        tabChar[0] = Character.toUpperCase(chaine.charAt(0));
+        for (int index = 1; index < longueur; index += 1) {
+            if (tabChar[index - 1] == ' ') {
+                tabChar[index] = Character.toUpperCase( tabChar[index]);
+            } else {
+                tabChar[index] = Character.toLowerCase( tabChar[index]);
+            }
+        }
+        return new String(tabChar);
+    }
 }

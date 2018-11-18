@@ -1,5 +1,7 @@
 package classeMereFille;
 
+import java.sql.SQLException;
+
 public class Mere {
 
 	public Mere(){
@@ -17,4 +19,6 @@ public class Mere {
 		static public void presentationStatic() {
 			System.out.println("Je suis la classe mere Static");
 		}
+
+
 	}

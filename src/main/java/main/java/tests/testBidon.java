@@ -3,6 +3,7 @@ package main.java.tests;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.DoubleStream;
 
@@ -25,8 +26,13 @@ class Derived extends Base {
 
 public class testBidon {
 
+private static String tyty = "";
 
     public static void main(String[] args) {
+
+        int toto = 5;
+        System.out.println(Objects.toString(toto));
+        tyty+="e";
    /*  String nomFichier = " Un  DEUX    tRIS    QUATRE    .pdf";
 
        int a1 = 5; double a2 = (float)a1;

@@ -13,35 +13,19 @@ public class triInsertionSansSolution {
    }
 
    static void triInsertion(int[] tableau) {
-       int memory, compt;
-       boolean marqueur ;
-       for (int j = 1; j < tableau.length; j++) {
 
-            memory = tableau[j] ;
-            compt=j-1;
+       for (int index =0; index<tableau.length-1 ; index+=1) {
+           int valeurA = tableau[index];
+           int valeurB = tableau[index + 1];
 
-            do {
-
-                marqueur = false;
-                if (memory < tableau[compt]) {
-                    marqueur = true;
-                    tableau[compt+1] = tableau[compt];
-                    compt--;
-                }
-                if (compt<0) {
-                    marqueur = false;
-                }
-            } while (marqueur);
-           tableau[compt+1]=memory;
-
+           if (valeurA > valeurB) {
+               tableau[index] = valeurB ;
+               tableau[index + 1] = valeurA;
+               index =-1;
+           }
        }
 
 
-      for (int i = 0; i < tableau.length; i++) {
-            System.out.print(tableau[i]);
-
-         System.out.print("\n");
-      }
    }
 
 }

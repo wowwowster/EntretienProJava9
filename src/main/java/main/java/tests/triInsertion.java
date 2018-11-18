@@ -8,23 +8,30 @@ public class triInsertion {
       triInsertion(tableau);
    }
 
-   public static void triInsertion(int tablo[]) {
+      public static void triInsertion(int tableau[])  {
+         int longueur=tableau.length;
 
-      int longueur = tablo.length;
-
-      for (int indexA = 0; indexA < longueur - 1; indexA++) {
-         int valueA = tablo[indexA];
-         int valueB = tablo[indexA + 1];
-         if (valueA > valueB) {
-            tablo[indexA] = valueB;
-            tablo[indexA + 1] = valueA;
-            indexA = -1;
+         for(int i=1;i<longueur;i++)  {
+            int memory=tableau[i];
+            int compt=i-1;
+            boolean marqueur;
+            do  {
+               marqueur=false;
+               if (tableau[compt]>memory)    {
+                  tableau[compt+1]=tableau[compt];
+                  compt--;
+                  marqueur=true;
+               }
+               if (compt<0) marqueur=false;
+            }
+            while(marqueur);
+            tableau[compt+1]=memory;
          }
 
-      }
+
 
       for (int i = 0; i < longueur; i++) {
-         System.out.print(tablo[i] + ",");
+         System.out.print(tableau[i] + ",");
       }
 
 

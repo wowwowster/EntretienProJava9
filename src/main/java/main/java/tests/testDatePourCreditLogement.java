@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class testDatePourCreditLogement {
@@ -14,6 +15,9 @@ public class testDatePourCreditLogement {
 	   * @param args
 	   */
 	  public static void main(String[] args) {
+
+
+
 	    Date aujourdhui = new Date();
 	    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	    System.out.println("1er cas " +sdf.format(aujourdhui));
